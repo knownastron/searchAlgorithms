@@ -1,32 +1,54 @@
+class keyValue {
+    constructor(key, value) {
+        this.pair = {
+            [key] : value
+        };
+    }
+    toString() {
+        console.log(this.pair);
+    }
+}
+
 class ST {
     constructor() {
-        this.table = new Map();
+        this.st = [];
     }
 
     add(key, value) {
-        this.table.set(key, value);
+        let newPair = new keyValue(key, value);
+        //console.log(newPair);
+        this.st.push(newPair);
     }
 
     print() {
-        console.log(this.table);
+        let counter = 1;
+        for (let i = 0; i < this.st.length; i++) {
+            console.dir(this.st[i].toString());
+        }
     }
 
     get(key) {
-        return this.table.get(key);
     }
 
     delete(key) {
-        this.table.delete(key);
     }
+
+    contains(key) {
+    }
+
+    size() {
+    }
+
 }
 
 
 let myST = new ST();
 
 myST.add('Wu-Tang Clan', 'Don\'t fuck with.');
-myST.add('G-Unit', 'Wack ass early 2000s gangster rap group.');
-myST.add('NWA', 'The father of gangsta rap.');
+//myST.add('G-Unit', 'Wack ass early 2000s gangster rap group.');
+//myST.add('NWA', 'The father of gangsta rap.');
+//myST.add('Wu-Tang Clan', 'From the streets of Shaolin');
 
-myST.print();
-myST.delete('G-Unit');
+myObject = new keyValue('ya', 'what');
+//console.log(myObject);
 myST.print();
